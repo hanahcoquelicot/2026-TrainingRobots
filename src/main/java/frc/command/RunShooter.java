@@ -1,14 +1,13 @@
 package frc.command;
 
-import frc.subsystems.ElevatorSubsystem;
+import frc.subsystems.ShooterSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
-import frc.robot.RobotMap.ElevatorSpeed;
 
-public class ElevateUp extends Command {
-    public ElevatorSubsystem ElevatorSubsystem;
+public class RunShooter extends Command {
+    public ShooterSubsystem ShooterSubsystem;
 
-    public ElevateUp(ElevatorSubsystem ElevatorSubsystem) {
-        this.ElevatorSubsystem = ElevatorSubsystem;
+    public Shooter(ShooterSubsystem ShooterSubsystem) {
+        this.ShooterSubsystem = ShooterSubsystem;
     }
 
     public void initialize(){
@@ -18,13 +17,13 @@ public class ElevateUp extends Command {
     @Override
     public void execute() {
         //This gets called when the command does. 
-        ElevatorSubsystem.setSpeed(ElevatorSpeed);
+        ShooterSubsystem.run();
     }
 
     @Override
     public void end(boolean interrupted) {
         //this gets called when the input stops being given. 
-        ElevatorSubsystem.stop();
+        ShooterSubsystem.stop();
     }
 
     @Override

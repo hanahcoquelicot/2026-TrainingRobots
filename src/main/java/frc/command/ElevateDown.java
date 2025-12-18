@@ -4,10 +4,10 @@ import frc.subsystems.ElevatorSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.RobotMap.ElevatorSpeed;
 
-public class ElevateUp extends Command {
+public class ElevateDown extends Command {
     public ElevatorSubsystem ElevatorSubsystem;
 
-    public ElevateUp(ElevatorSubsystem ElevatorSubsystem) {
+    public ElevateDown(ElevatorSubsystem ElevatorSubsystem) {
         this.ElevatorSubsystem = ElevatorSubsystem;
     }
 
@@ -18,11 +18,11 @@ public class ElevateUp extends Command {
     @Override
     public void execute() {
         //This gets called when the command does. 
-        ElevatorSubsystem.setSpeed(ElevatorSpeed);
+        ElevatorSubsystem.setSpeed(-ElevatorSpeed);
     }
 
     @Override
-    public void end(boolean interrupted) {
+    public void end(boolean interrDownted) {
         //this gets called when the input stops being given. 
         ElevatorSubsystem.stop();
     }
